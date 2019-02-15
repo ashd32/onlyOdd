@@ -17,11 +17,11 @@ function seek(input, who) {   //  declares comparison function
     }, function (calls) {
         return calls + 1;   // calls seek function again
     }, function (alt) {
-        only(who(input[alt], alt, input), function () {
-            arrayObject.push(input[alt]);   // creates a new array of only odd numbers
+        only(who(input[alt], alt, input), function () {     // finds the odd numbers in input array
+            arrayObject.push(input[alt]);  // pushes to new array
         });
     });
-    return arrayObject;
+    return arrayObject;  // creates a new array of only odd numbers
 }
 const oddNums = seek(array, function (x) {
     return x % 2 !== 0; // math operation to determine if the remainder of each number in array is NOT divisible by 2
